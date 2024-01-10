@@ -3,6 +3,10 @@
         {
             "path": "notes",
             "name": "Personal"
+        },
+        {
+            "path": "../TGT/vault",
+            "name": "Novel - The Good Teacher"
         }
     ],
     "settings": {
