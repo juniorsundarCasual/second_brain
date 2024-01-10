@@ -1,3 +1,3 @@
-# second_brain
-# second_brain
-# second_brain
+# Junior's Second Brain
+
+ENTER AT YOUR OWN RISK!

@@ -23,6 +23,9 @@ commands:
 workspace:
     vaults:
         -
+            fsPath: dependencies/TGT
+            name: Novel-TGT
+        -
             fsPath: .
             selfContained: true
             name: Personal
@@ -106,3 +109,8 @@ publishing:
     enableTaskNotes: true
     enablePrettyLinks: true
     searchMode: search
+    duplicateNoteBehavior:
+        action: useVault
+        payload:
+            - Novel-TGT
+            - Personal
