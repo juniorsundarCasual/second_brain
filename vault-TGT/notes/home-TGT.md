@@ -21,12 +21,12 @@ In this new world, Guy rediscovered his life's true calling! Ride along on Guy's
 
 **State of Story**:
 
-* [[miscellaneous]]
-* [[volume-1]] [COMPLETED][FREE]
-* [[volume-2]] [COMPLETED][LOCKED]
-* [[volume-3]] [COMPLETED][LOCKED]
-* [[volume-4]] [COMPLETED][LOCKED]
-* [[volume-5]] [ONGOING][LOCKED]
+* [[home-TGT.miscellaneous]]
+* [[home-TGT.volume-1]] [COMPLETED][FREE]
+* [[home-TGT.volume-2]] [COMPLETED][LOCKED]
+* [[home-TGT.volume-3]] [COMPLETED][LOCKED]
+* [[home-TGT.volume-4]] [COMPLETED][LOCKED]
+* [[home-TGT.volume-5]] [ONGOING][LOCKED]
 
 **Discord**:
 https://discord.gg/PKbqtembQJ
