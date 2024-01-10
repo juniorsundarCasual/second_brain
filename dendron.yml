@@ -116,3 +116,4 @@ publishing:
         payload:
             - Personal
             - Novel - The Good Teacher
+    theme: dark

@@ -1,7 +1,21 @@
 ---
 id: mku280r9tjd36w261aevcdz
-title: root
+title: The Second Brain
 desc: ''
-updated: 1704885780792
+updated: 1704920016982
 created: 1704869664818
 ---
+
+# Introduction
+
+This is my Second Brain. Enter at your own risk!
+
+# Table of Contents
+
+- [[technical]]
+    - [[technical.px4]]
+    - [[technical.libraries]]
+
+# My Other Brains
+
+- **[Webnovel](https://www.webnovel.com/book/the-good-teacher_19850538806611205)**: [The Good Teacher](https://juniorsundarcasual.github.io/TGT/)
