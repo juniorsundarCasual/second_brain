@@ -93,4 +93,4 @@ Guy nodded and retrieved his original consciousness by taking off the mask.
 ____
 
 **Next**
-* [[volume-1.chapter-046]]
+* [[home-TGT.volume-1.chapter-046]]
