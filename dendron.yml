@@ -23,10 +23,6 @@ commands:
 workspace:
     vaults:
         -
-            fsPath: ./vault-TGT
-            selfContained: true
-            name: Novel-TGT
-        -
             fsPath: .
             selfContained: true
             name: Personal
@@ -117,4 +113,3 @@ publishing:
         action: useVault
         payload:
             - Personal
-            - Novel-TGT
