@@ -22,7 +22,7 @@ In this new world, Guy rediscovered his life's true calling! Ride along on Guy's
 **State of Story**:
 
 * [[miscellaneous]]
-* [[home-TGT.volume-1]] [COMPLETED][FREE]
+* [[volume-1]] [COMPLETED][FREE]
 * [[volume-2]] [COMPLETED][LOCKED]
 * [[volume-3]] [COMPLETED][LOCKED]
 * [[volume-4]] [COMPLETED][LOCKED]
