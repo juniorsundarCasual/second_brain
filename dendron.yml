@@ -22,7 +22,10 @@ commands:
     templateHierarchy: template
 workspace:
     vaults:
-         -
+        -
+            fsPath: vault
+            workspace: TGT
+        -
             fsPath: .
             selfContained: true
             name: Personal
@@ -73,6 +76,11 @@ workspace:
     maxNoteLength: 204800
     enableFullHierarchyNoteTitle: false
     enablePersistentHistory: false
+    workspaces:
+        TGT:
+            remote:
+                type: git
+                url: https://github.com/juniorsundarcasual/TGT/
 preview:
     enableFMTitle: true
     enableNoteTitleForLink: true
@@ -110,3 +118,4 @@ publishing:
         action: useVault
         payload:
             - Personal
+            - Novel-TGT

@@ -1,6 +1,9 @@
 {
     "folders": [
         {
+            "path": "TGT/vault"
+        },
+        {
             "path": "notes",
             "name": "Personal"
         }
