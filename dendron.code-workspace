@@ -1,10 +1,6 @@
 {
     "folders": [
         {
-            "path": "dependencies/TGT",
-            "name": "Novel-TGT"
-        },
-        {
             "path": "notes",
             "name": "Personal"
         }

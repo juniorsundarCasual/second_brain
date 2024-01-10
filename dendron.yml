@@ -22,10 +22,7 @@ commands:
     templateHierarchy: template
 workspace:
     vaults:
-        -
-            fsPath: dependencies/TGT
-            name: Novel-TGT
-        -
+         -
             fsPath: .
             selfContained: true
             name: Personal
@@ -112,5 +109,4 @@ publishing:
     duplicateNoteBehavior:
         action: useVault
         payload:
-            - Novel-TGT
             - Personal
