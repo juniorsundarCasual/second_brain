@@ -93,14 +93,7 @@ publishing:
     copyAssets: true
     siteHierarchies:
         - home-personal
-        - technical
         - home-TGT
-        - miscellaneous
-        - volume-1
-        - volume-2
-        - volume-3
-        - volume-4
-        - volume-5
     writeStubs: false
     siteRootDir: docs
     seo:

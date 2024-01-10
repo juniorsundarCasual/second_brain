@@ -12,7 +12,7 @@ This is the root of your dendron vault. If you decide to publish your entire vau
 
 # Table of Contents
 
-- [[technical]]
-    - [[technical.px4]]
-    - [[technical.libraries]]
+- [[home-personal.technical]]
+    - [[home-personal.technical.px4]]
+    - [[home-personal.technical.libraries]]
     

@@ -8,4 +8,4 @@ created: 1704869894847
 
 # Table of Contents
 
-- [[technical.px4]]
+- [[home-personal.technical.px4]]
