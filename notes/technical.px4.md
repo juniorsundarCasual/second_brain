@@ -27,7 +27,7 @@ _Access their website [here](https://pixhawk.org/)._
 
 # Middleware
 
-## [[home-personal.technical.px4.uorb]]
+## [[technical.px4.uorb]]
 
 It is an asynchronous publish() / subscribe() messaging API used for inter-thread/inter-process communication. It is automatically started early on bootup.
 
@@ -50,7 +50,7 @@ _Read advanced notes on this [here](https://docs.px4.io/main/en/middleware/uxrce
 
 It is a lightweight messaging protocol that is designed to be used in the drone ecosystem.
 
-PX4 uses MAVLink to communicate with ground stations and MAVLink SDKs, such as [[home-personal.technical.px4#qgroundcontrol]] and [[home-personal.technical.libraries.mavsdk]]]
+PX4 uses MAVLink to communicate with ground stations and MAVLink SDKs, such as [[technical.px4#qgroundcontrol]] and [[technical.libraries.mavsdk]]]
 
 # Development
 
@@ -116,6 +116,6 @@ chmod +x ./QGroundControl.AppImage
 ./QGroundControl.AppImage  # or double click
 ```
 
-### [[home-personal.technical.px4.simulation]] (SITL)
+### [[technical.px4.simulation]] (SITL)
 
 ### ROS
