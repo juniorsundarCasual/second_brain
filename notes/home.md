@@ -2,9 +2,11 @@
 id: lelcc73a8eejxqda9yct00f
 title: The Second Brain
 desc: ''
-updated: 1704955622039
+updated: 1704956084181
 created: 1704955600107
 ---
+
+![](./assets/logo.png)
 
 # Introduction
 
