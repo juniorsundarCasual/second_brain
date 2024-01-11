@@ -2,7 +2,7 @@
 id: 8slw67n6b4mks3k0egpozjp
 title: Simulation
 desc: ''
-updated: 1704954945266
+updated: 1704955446786
 created: 1704872877142
 ---
 
@@ -75,4 +75,4 @@ make px4_sitl gz_x500
 # For jMAVSim simulation
 make px4_sitl jmavsim
 ```
-From here, in a separate terminal, if you run [[QGroundControl|technical.frameworks.px4#qgroundcontrol]].
+From here, in a separate terminal, if you run [[QGroundControl|technical.frameworks.px4#qgroundcontrol]], you should be able to control the drone through that.

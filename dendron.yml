@@ -91,12 +91,17 @@ publishing:
     enableKatex: true
     copyAssets: true
     siteHierarchies:
-        - root
+        - home
+        - technical
+        - tags
     writeStubs: false
     siteRootDir: docs
     seo:
         title: Junior Sundar
         description: Personal Knowledge Space
+        image:
+          url: "https://raw.githubusercontent.com/juniorsundarCasual/second_brain/main/notes/assets/logo.png"
+          alt: Second Brain
     github:
         enableEditLink: true
         editLinkText: Edit this page on GitHub
