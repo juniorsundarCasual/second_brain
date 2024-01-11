@@ -2,8 +2,11 @@
 id: pmllbd94b3isbiyff07y08r
 title: ROS 2
 desc: ''
-updated: 1704969112022
+updated: 1704970476960
 created: 1704965694417
+tags:
+    - software
+    - robotics
 ---
 
 # Installation (Humble Hawksbill)
@@ -25,7 +28,7 @@ export LANG=en_US.UTF-8
 locale  # verify settings
 ```
 
-## Setup Sources
+## Set up Sources
 
 Add ROS 2 `apt` repository to the system. First ensure that Ubuntu Universe repository is enabled.
 
@@ -81,3 +84,12 @@ We can permanently source the ROS installation by running:
 ```bash
 echo "source /opt/ros/humble/setup.bash" >> .bashrc
 ```
+
+# Distributed System
+
+DDS (Data Distribution Service) plays a crucial role in ROS (Robot Operating System), especially in ROS 2. It acts as the underlying connectivity framework that facilitates communication between different parts of a ROS-based system.
+
+1. **Middleware Layer** - DDS is used as the default middleware. This means that DDS is responsible for the efficient and reliable exchange of information between different nodes (components) of a ROS 2 system. It's a layer that sits between the ROS application layer and the network, managing data exchange and communication.
+2. **Vendor Agnosticism** - Is designed to be DDS vendor-agnostic. This means it can work with different DDS implementations, such as eProsima's Fast DDS, RTI’s Connext DDS, Eclipse Cyclone DDS, and GurumNetworks GurumDDS. This flexibility allows users to choose a DDS implementation that best fits their specific requirements.
+3. **Key Functions Provided by DDS** - DDS provides several essential services in ROS 2, including discovery (finding and connecting to other nodes in the network), message serialization (converting data to a format suitable for transmission), and publish-subscribe transport (managing how messages are sent and received).
+4. **Enhanced Features** - Brings enhanced features compared to ROS 1, such as distributed discovery (eliminating the need for a central master for node discovery), more granular quality of service settings, and potentially more efficient intra-process communication through shared memory.

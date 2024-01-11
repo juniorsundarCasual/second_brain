@@ -2,7 +2,7 @@
 id: uq4llj5l5bq3taadrmtxsej
 title: Robot Operating System (ROS)
 desc: ''
-updated: 1704968198923
+updated: 1704969853604
 created: 1704956570633
 tags:
     - software
@@ -39,6 +39,10 @@ As of now, it primarily runs only on Unix platforms, though as of ROS 2 it is al
 - **Legacy vs. Modern Requirements** - ROS 1 is suitable for educational and research projects, while ROS 2 caters to modern, industrial, and secure applications.
 - **Community and Support** - ROS 1 has a larger existing base of packages and community support, but ROS 2 is rapidly catching up and is the focus of future development.
 - **Application Needs** - For advanced networking, security, or real-time requirements, ROS 2 is the preferred choice.
+
+### Bottomline
+
+The key difference can be narrowed down to the way in which the communication between nodes is facilitated in the two different systems. ROS 1 uses [[TCP/IP|technical.frameworks.ros.ros1]] primarily while ROS 2 uses [[DDS|technical.frameworks.ros.ros2]]. The links will expound on this implementation in more detail.
 
 # Distributions
 

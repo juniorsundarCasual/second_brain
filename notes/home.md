@@ -2,7 +2,7 @@
 id: lelcc73a8eejxqda9yct00f
 title: The Second Brain
 desc: ''
-updated: 1704956084181
+updated: 1704970274739
 created: 1704955600107
 ---
 
@@ -15,9 +15,7 @@ This is my Second Brain. Enter at your own risk!
 # Table of Contents
 
 - [[technical]]
-    - [[technical.frameworks]]
-    - [[technical.libraries]]
-    - [[technical.terminologies]]
+- [[tags|tags]]
 
 # My Other Brains
 

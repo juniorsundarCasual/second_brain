@@ -2,8 +2,11 @@
 id: xiggths99l3j726xzfds9rf
 title: uORB Messaging
 desc: ''
-updated: 1704956482074
+updated: 1704969198997
 created: 1704873074339
+tags:
+    - software
+    - drone
 ---
 
 # [Messages](https://docs.px4.io/main/en/msg_docs/#uorb-message-reference)
