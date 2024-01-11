@@ -2,7 +2,7 @@
 id: mku280r9tjd36w261aevcdz
 title: The Second Brain
 desc: ''
-updated: 1704920016982
+updated: 1704953398957
 created: 1704869664818
 ---
 
@@ -13,8 +13,9 @@ This is my Second Brain. Enter at your own risk!
 # Table of Contents
 
 - [[technical]]
-    - [[technical.px4]]
+    - [[technical.frameworks]]
     - [[technical.libraries]]
+    - [[technical.terminologies]]
 
 # My Other Brains
 

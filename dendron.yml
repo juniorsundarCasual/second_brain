@@ -22,9 +22,9 @@ commands:
     templateHierarchy: template
 workspace:
     vaults:
-        -
-            fsPath: ../TGT/vault/.
-            name: Novel - The Good Teacher
+        # -
+        #     fsPath: ../TGT/vault/.
+        #     name: Novel - The Good Teacher
         -
             fsPath: .
             selfContained: true
@@ -102,6 +102,7 @@ publishing:
         editLinkText: Edit this page on GitHub
         editBranch: main
         editViewMode: tree
+    logoPath: notes/assets/logo.png
     enableSiteLastModified: true
     enableFrontmatterTags: true
     enableHashesForFMTags: false
@@ -115,5 +116,5 @@ publishing:
         action: useVault
         payload:
             - Personal
-            - Novel - The Good Teacher
+            # - Novel - The Good Teacher
     theme: dark

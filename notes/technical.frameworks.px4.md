@@ -2,7 +2,7 @@
 id: u5wyzvvhy0gyli06ndqwlld
 title: PX4 - Autopilot
 desc: ''
-updated: 1704919862916
+updated: 1704951684971
 created: 1704869894839
 tags:
   - software
@@ -27,7 +27,7 @@ _Access their website [here](https://pixhawk.org/)._
 
 # Middleware
 
-## [[technical.px4.uorb]]
+## [[technical.frameworks.px4.uorb]]
 
 It is an asynchronous publish() / subscribe() messaging API used for inter-thread/inter-process communication. It is automatically started early on bootup.
 
@@ -48,9 +48,9 @@ _Read advanced notes on this [here](https://docs.px4.io/main/en/middleware/uxrce
 
 ## MAVLink
 
-It is a lightweight messaging protocol that is designed to be used in the drone ecosystem.
+It is a lightweight messaging protocol that is designed to be used in the drone ecosystem. It is designed for efficiently sending messages over unreliable low-bandwidth radio links.
 
-PX4 uses MAVLink to communicate with ground stations and MAVLink SDKs, such as [[technical.px4#qgroundcontrol]] and [[technical.libraries.mavsdk]]]
+PX4 uses MAVLink to communicate with ground stations and MAVLink SDKs, such as [[technical.frameworks.px4#qgroundcontrol]] and [[technical.libraries.mavsdk]]
 
 # Development
 
@@ -116,6 +116,6 @@ chmod +x ./QGroundControl.AppImage
 ./QGroundControl.AppImage  # or double click
 ```
 
-### [[technical.px4.simulation]] (SITL)
+### [[technical.frameworks.px4.simulation]] (SITL)
 
 ### ROS
