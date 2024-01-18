@@ -93,6 +93,7 @@ publishing:
     siteHierarchies:
         - home
         - technical
+        - ideas
         - tags
     writeStubs: false
     siteRootDir: docs

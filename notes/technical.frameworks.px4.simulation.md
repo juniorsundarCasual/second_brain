@@ -2,7 +2,7 @@
 id: 8slw67n6b4mks3k0egpozjp
 title: Simulation
 desc: ''
-updated: 1704969191985
+updated: 1705563580292
 created: 1704872877142
 tags:
     - software
@@ -63,6 +63,8 @@ Since the PX4 is an important component in the system's design, it is used as th
 
 # [[technical.terminologies.software-in-the-loop]] (SITL)
 
+## Set-Up
+
 To run the simulations, you need to first enter the PX4-Autopilot toolchain directory that was cloned.
 ![[technical.frameworks.px4#autopilot-installation]]
 
@@ -80,3 +82,42 @@ make px4_sitl gz_x500
 make px4_sitl jmavsim
 ```
 From here, in a separate terminal, if you run [[QGroundControl|technical.frameworks.px4#qgroundcontrol]], you should be able to control the drone through that.
+
+## Low-Level Control
+
+The out-of-the-box set-up for SITL does not provide access to PWM inputs into the actuators. This is because the simulation does not have an ESC model. As a result direct control of the simulated motors is not possible.
+
+There is a repository that offers a way to achieve this low-level control:
+[SaxionMechatronics/px4_offboard_lowlevel](https://github.com/SaxionMechatronics/px4_offboard_lowlevel)
+
+In this code, they are using a commonly used "quadratic approximation" that maps RPM to PWM:
+
+$$
+\text{PWM} = c_2 \text{RPM}^2 + c_1 \text{RPM} + c_0
+$$
+
+In this application:
+```yaml
+# For the holybro x500
+ros__parameters:
+    uav_parameters:
+        mass: 2.0                  # Kg
+        arm_length: 0.25             # m
+        num_of_arms: 4
+        inertia:                     # Kg.m^2
+            x: 0.08612
+            y: 0.08962
+            z: 0.16088
+        moment_constant: 0.016     # m
+        thrust_constant: 8.54858e-06   # N.s^2/rad^2
+        max_rotor_speed: 1000         # rad/s
+        gravity: 9.81                # m/s^2
+        omega_to_pwm_coefficient:
+            x_2: 0.001142
+            x_1: 0.2273
+            x_0: 914.2
+        PWM_MIN: 1075
+        PWM_MAX: 1950
+        input_scaling: 1000
+        zero_position_armed: 10
+```
