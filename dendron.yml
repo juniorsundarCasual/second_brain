@@ -95,6 +95,7 @@ publishing:
         - technical
         - ideas
         - tags
+        - meet
     writeStubs: false
     siteRootDir: docs
     seo:
