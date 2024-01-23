@@ -2,7 +2,7 @@
 id: u5wyzvvhy0gyli06ndqwlld
 title: PX4 - Autopilot
 desc: ''
-updated: 1704970107850
+updated: 1705997411882
 created: 1704869894839
 tags:
   - software
@@ -118,4 +118,168 @@ chmod +x ./QGroundControl.AppImage
 
 ### [[technical.frameworks.px4.simulation]] (SITL)
 
-### ROS
+Simulation is a quick, easy, and most importantly, safe way to test changes to PX4 code before attempting to fly in the real world. It is also a good way to start flying with PX4 when you haven't yet got a vehicle to experiment with.
+
+PX4 supports both Software In the Loop (SITL) simulation, where the flight stack runs on computer (either the same computer or another computer on the same network) and Hardware In the Loop (HITL) simulation using a simulation firmware on a real flight controller board. HITL is only community supported.
+
+### [[ROS | technical.frameworks.px4.ros2]]
+
+Limited only to ROS 2 since ROS 1 is slowly reaching deprecation. Through the [[μXRCE-DDS | technical.frameworks.px4#μxrce-dds-px4-ros-2dds-bridge]] client-agent, it is possible to expose the uORB messages in the flight controller to the ROS 2 framework. This facilitates forward and backwards communication.
+
+## Fault Injection
+
+It is possible to inject faults into the flight controller. This methodology is observed in [[literature review | ideas.srta-exploration.literature-review#fault-injector-for-autonomous-quadrotors]]. The strategy can be applied by introducing faults into the source code itself.
+
+### Example: IMU
+
+To introduce a dynamic way to inject and remove faults from this module, we can take advantage of the parameter server in the FC (by launching custom parameters).
+
+
+```cpp
+/**
+* Navigate to ./PX4-Autopilot/src/modules/sensors/vehicle_imu/VehicleIMU.cpp
+* Add the following snippet of code before the _vehicle_imu_pub.publish(imu) call
+*
+**/
+// Adding faults to the accelerometer
+param_t accel_fault = param_find("SENS_ACCEL_FAULT");
+int32_t accel_fault_flag;
+param_get(accel_fault, &accel_fault_flag);
+
+if (accel_fault_flag == 1)
+{
+    param_t accel_noise = param_find("SENS_ACCEL_NOISE");
+    float_t accel_noise_flag;
+    param_get(accel_noise, &accel_noise_flag);
+
+    if (abs(accel_noise_flag) > 0)
+    {
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+        std::default_random_engine generator (seed);
+
+        std::normal_distribution<float> distribution (0.0,accel_noise_flag);
+        float dev = distribution(generator);
+        imu.delta_velocity[0] += imu.delta_velocity[0]*dev;
+        imu.delta_velocity[1] += imu.delta_velocity[1]*dev;
+        imu.delta_velocity[2] += imu.delta_velocity[2]*dev;
+    }
+
+    param_t accel_bias_shift = param_find("SENS_ACCEL_SHIF");
+    float_t accel_bias_shift_flag;
+    param_get(accel_bias_shift, &accel_bias_shift_flag);
+
+    if (abs(accel_bias_shift_flag) > 0)
+    {
+        imu.delta_velocity[0] += imu.delta_velocity[0]*accel_bias_shift_flag;
+        imu.delta_velocity[1] += imu.delta_velocity[1]*accel_bias_shift_flag;
+        imu.delta_velocity[2] += imu.delta_velocity[2]*accel_bias_shift_flag;
+    }
+
+    param_t accel_bias_scale = param_find("SENS_ACCEL_SCAL");
+    float_t accel_bias_scale_flag;
+    param_get(accel_bias_scale, &accel_bias_scale_flag);
+
+    if (abs(accel_bias_scale_flag) > 0)
+    {
+        imu.delta_velocity[0] *= accel_bias_scale_flag;
+        imu.delta_velocity[1] *= accel_bias_scale_flag;
+        imu.delta_velocity[2] *= accel_bias_scale_flag;
+    }
+
+    param_t accel_drift = param_find("SENS_ACCEL_DRIFT");
+    float_t accel_drift_flag;
+    param_get(accel_drift, &accel_drift_flag);
+
+    if (abs(accel_drift_flag) > 0)
+    {
+        //! Will have to initialise and declare 'accel_drift_timestep'
+        imu.delta_velocity[0] += 0.01f*accel_drift_flag*accel_drift_timestep/1000000;
+        imu.delta_velocity[1] += 0.01f*accel_drift_flag*accel_drift_timestep/1000000;
+        imu.delta_velocity[2] += 0.01f*accel_drift_flag*accel_drift_timestep/1000000;
+
+        accel_drift_timestep += 1;
+    }
+
+    param_t accel_zero = param_find("SENS_ACCEL_ZERO");
+    int32_t accel_zero_flag;
+    param_get(accel_zero, &accel_zero_flag);
+
+    if (accel_zero_flag == 1)
+    {
+        imu.delta_velocity[0] = 0;
+        imu.delta_velocity[1] = 0;
+        imu.delta_velocity[2] = 0;
+    }
+}
+
+// Adding faults to the gyroscope
+param_t gyro_fault = param_find("SENS_GYRO_FAULT");
+int32_t gyro_fault_flag;
+param_get(gyro_fault, &gyro_fault_flag);
+
+if (gyro_fault_flag == 1)
+{
+    param_t gyro_noise = param_find("SENS_GYRO_NOISE");
+    float_t gyro_noise_flag;
+    param_get(gyro_noise, &gyro_noise_flag);
+
+    if (abs(gyro_noise_flag) > 0)
+    {
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+        std::default_random_engine generator (seed);
+
+        std::normal_distribution<float> distribution (0.0,gyro_noise_flag);
+        float dev = distribution(generator);
+        imu.delta_angle[0] += imu.delta_angle[0]*dev;
+        imu.delta_angle[1] += imu.delta_angle[0]*dev;
+        imu.delta_angle[2] += imu.delta_angle[0]*dev;
+    }
+
+    param_t gyro_bias_shift = param_find("SENS_GYRO_SHIF");
+    float_t gyro_bias_shift_flag;
+    param_get(gyro_bias_shift, &gyro_bias_shift_flag);
+
+    if (abs(gyro_bias_shift_flag) > 0)
+    {
+        imu.delta_angle[0] += imu.delta_angle[0]*gyro_bias_shift_flag;
+        imu.delta_angle[1] += imu.delta_angle[1]*gyro_bias_shift_flag;
+        imu.delta_angle[2] += imu.delta_angle[2]*gyro_bias_shift_flag;
+    }
+
+    param_t gyro_bias_scale = param_find("SENS_GYRO_SCAL");
+    float_t gyro_bias_scale_flag;
+    param_get(gyro_bias_scale, &gyro_bias_scale_flag);
+
+    if (abs(gyro_bias_scale_flag) > 0)
+    {
+        imu.delta_angle[0] *= gyro_bias_scale_flag;
+        imu.delta_angle[1] *= gyro_bias_scale_flag;
+        imu.delta_angle[2] *= gyro_bias_scale_flag;
+    }
+
+    param_t gyro_drift = param_find("SENS_GYRO_DRIFT");
+    float_t gyro_drift_flag;
+    param_get(gyro_drift, &gyro_drift_flag);
+
+    if (abs(gyro_drift_flag) > 0)
+    {
+        //! Will have to initialise and declare 'gyro_drift_timestep'
+        imu.delta_angle[0] += 0.01f*gyro_drift_flag*gyro_drift_timestep/1000000;
+        imu.delta_angle[1] += 0.01f*gyro_drift_flag*gyro_drift_timestep/1000000;
+        imu.delta_angle[2] += 0.01f*gyro_drift_flag*gyro_drift_timestep/1000000;
+
+        gyro_drift_timestep += 1;
+    }
+
+    param_t gyro_zero = param_find("SENS_GYRO_ZERO");
+    int32_t gyro_zero_flag;
+    param_get(gyro_zero, &gyro_zero_flag);
+
+    if (gyro_zero_flag == 1)
+    {
+        imu.delta_angle[0] = 10000;
+        imu.delta_angle[1] = 10000;
+        imu.delta_angle[2] = 10000;
+    }
+}
+```
