@@ -45,8 +45,7 @@ Popular uses of Go include:
 
 * Download the latest version of Go from their [website](https://go.dev/doc/install).
 
-* Remove any previous Go installation by deleting the `/usr/local/go` folder (if it exists), then extract the archive you just downloaded into `/usr/local`, creating a fresh Go tree in `/usr/local/go`. 
-Do not untar the archive into an existing `/usr/local/go` tree. This is known to produce broken Go installations.
+* Remove any previous Go installation by deleting the `/usr/local/go` folder (if it exists), then extract the archive you just downloaded into `/usr/local`, creating a fresh Go tree in `/usr/local/go`.  Do not untar the archive into an existing `/usr/local/go` tree. This is known to produce broken Go installations.
 
 ```bash
 sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go<version>linux-amd64.tar.gz
@@ -67,3 +66,4 @@ go version
 ```          
 
 * Confirm that the command prints the installed version of Go.
+
