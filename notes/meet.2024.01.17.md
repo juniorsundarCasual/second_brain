@@ -1,8 +1,8 @@
 ---
 id: 3niilaxu5s62qav54p85gju
-title: '17 - 01 - 2024'
+title: '17 January 2024'
 desc: ''
-updated: 1706003718645
+updated: 1706004226405
 created: 1705485813621
 traitIds:
   - meetingNote

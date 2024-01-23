@@ -2,7 +2,7 @@
 id: 8slw67n6b4mks3k0egpozjp
 title: Simulation
 desc: ''
-updated: 1705563580292
+updated: 1706004366467
 created: 1704872877142
 tags:
     - software
@@ -71,6 +71,7 @@ To run the simulations, you need to first enter the PX4-Autopilot toolchain dire
 ```bash
 cd ./PX4-Autopilot
 ```
+## Launch Simulation
 
 From there, we can build the code for which ever simulation environment that we want as long as it exists within the build tags.
 
