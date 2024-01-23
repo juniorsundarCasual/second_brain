@@ -1,8 +1,8 @@
 ---
 id: 8y0lulv0ydvjbkt4cisefb1
-title: '18'
+title: '18 - 01 - 2024'
 desc: ''
-updated: 1705573171430
+updated: 1706003710098
 created: 1705564987233
 traitIds:
   - meetingNote

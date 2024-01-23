@@ -2,7 +2,7 @@
 id: u5wyzvvhy0gyli06ndqwlld
 title: PX4 - Autopilot
 desc: ''
-updated: 1705997411882
+updated: 1706003464297
 created: 1704869894839
 tags:
   - software
@@ -134,6 +134,10 @@ It is possible to inject faults into the flight controller. This methodology is 
 
 To introduce a dynamic way to inject and remove faults from this module, we can take advantage of the parameter server in the FC (by launching custom parameters).
 
+
+<details>
+
+  <summary>Show code</summary>
 
 ```cpp
 /**
@@ -283,3 +287,83 @@ if (gyro_fault_flag == 1)
     }
 }
 ```
+</details>
+
+### Example: GPS
+
+Some cases are different when working with the SITL or the actual drone. For instance, the GPS fault injection requires affecting the data generated from the simulation side itself. 
+
+<details>
+
+  <summary>Show code</summary>
+
+```cpp
+/**
+* Navigate to ./PX4-Autopilot/src/modules/simulation/sensor_gps_sim/SensorGpsSim.cpp
+* Add the following snippet of code before the _sensor_gps_pub.publish(sensor_gps) call
+*
+**/
+// Adding faults to the gps
+param_t gps_fault = param_find("SENS_GPS_FAULT");
+int32_t gps_fault_flag;
+param_get(gps_fault, &gps_fault_flag);
+if (gps_fault_flag == 1)
+
+{
+    param_t gps_noise = param_find("SENS_GPS_NOISE");
+    float_t gps_noise_flag;
+    param_get(gps_noise, &gps_noise_flag);
+
+    if (abs(gps_noise_flag) > 0)
+    {
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+        std::default_random_engine generator (seed);
+
+        std::normal_distribution<double> distribution (0.0,static_cast<double>(gps_noise_flag));
+        double dev = distribution(generator);
+        sensor_gps.latitude_deg += sensor_gps.latitude_deg*dev;
+        sensor_gps.longitude_deg += sensor_gps.longitude_deg*dev;
+        sensor_gps.altitude_msl_m += sensor_gps.altitude_msl_m*dev;
+        sensor_gps.altitude_ellipsoid_m += sensor_gps.altitude_ellipsoid_m*dev;
+    }
+
+    param_t gps_bias_shift = param_find("SENS_GPS_SHIF");
+    float_t gps_bias_shift_flag;
+    param_get(gps_bias_shift, &gps_bias_shift_flag);
+
+    if (abs(gps_bias_shift_flag) > 0)
+    {
+        sensor_gps.latitude_deg += sensor_gps.latitude_deg*static_cast<double>(gps_bias_shift_flag);
+        sensor_gps.longitude_deg += sensor_gps.longitude_deg*static_cast<double>(gps_bias_shift_flag);
+        sensor_gps.altitude_msl_m += sensor_gps.altitude_msl_m*static_cast<double>(gps_bias_shift_flag);
+        sensor_gps.altitude_ellipsoid_m += sensor_gps.altitude_ellipsoid_m*static_cast<double>(gps_bias_shift_flag);
+    }
+
+    param_t gps_bias_scale = param_find("SENS_GPS_SCAL");
+    float_t gps_bias_scale_flag;
+    param_get(gps_bias_scale, &gps_bias_scale_flag);
+
+    if (abs(gps_bias_scale_flag) > 0)
+    {
+        sensor_gps.latitude_deg *= static_cast<double>(gps_bias_scale_flag);
+        sensor_gps.longitude_deg *= static_cast<double>(gps_bias_scale_flag);
+        sensor_gps.altitude_msl_m *= static_cast<double>(gps_bias_scale_flag);
+        sensor_gps.altitude_ellipsoid_m *= static_cast<double>(gps_bias_scale_flag);
+    }
+
+    param_t gps_drift = param_find("SENS_GPS_DRIFT");
+    float_t gps_drift_flag;
+    param_get(gps_drift, &gps_drift_flag);
+
+    if (abs(gps_drift_flag) > 0)
+    {
+        sensor_gps.latitude_deg += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
+        sensor_gps.longitude_deg += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
+        sensor_gps.altitude_msl_m += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
+        sensor_gps.altitude_ellipsoid_m += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
+
+        gps_drift_timestep += 1;
+    }
+}
+```
+</details>
