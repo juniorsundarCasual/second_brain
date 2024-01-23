@@ -2,13 +2,29 @@
 id: 8slw67n6b4mks3k0egpozjp
 title: Simulation
 desc: ''
-updated: 1706004366467
+updated: 1706007676496
 created: 1704872877142
 tags:
     - software
     - robotics
     - drone
 ---
+
+<!-- TOC -->
+1. [Introduction](#introduction)
+2. [Simulators](#simulators)
+    * [Gazebo](#gazebo)
+    * [jMAVSim](#jmavsim)
+    * [Flightgear](#flightgear)
+    * [Microsoft AirSim](#microsoft-airsim)
+    
+3. [Software in the Loop (SITL)](#software-in-the-loop--technicalterminologiessoftware-in-the-loop-sitl)
+    * [Set-Up](#set-up)
+    * [Launch Simulation](#launch-simulation)
+    * [Low-Level Control](#low-level-control)
+
+<!-- /TOC -->
+
 
 # Introduction
 
@@ -61,7 +77,7 @@ Since the PX4 is an important component in the system's design, it is used as th
 |  | Very high resource usage. |
 |  | No support for multiple vehicle simulations at the same time. |
 
-# [[technical.terminologies.software-in-the-loop]] (SITL)
+# [[Software in the Loop | technical.terminologies.software-in-the-loop]] (SITL)
 
 ## Set-Up
 
