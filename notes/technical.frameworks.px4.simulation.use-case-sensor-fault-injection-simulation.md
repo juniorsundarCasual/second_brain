@@ -2,7 +2,7 @@
 id: iy678vzhpal24bmiva4prsf
 title: Use Case - Sensor Fault Injection Simulation
 desc: ''
-updated: 1706080521373
+updated: 1706102293087
 created: 1706075704862
 ---
 
@@ -78,7 +78,7 @@ At catastrophic failure, the mission is paused while the simulation reloads.
 
 # Execution
 
-GitHub: [juniorsundar-tii/px4_fault_ws](https://github.com/juniorsundar-tii/px4_fault_ws/)
+GitHub: [tiiuae/px4-fault-ws](https://github.com/tiiuae/px4-fault-ws/)
 
 ## Installation
 
@@ -86,7 +86,7 @@ A shell script included in the aforementioned repository handles all the install
 
 ```bash
 mkdir -p ~/px4_fault_ws
-git clone --recursive https://github.com/juniorsundar-tii/px4_fault_ws.git ~/px4_fault_ws
+git clone --recursive https://github.com/tiiuae/px4-fault-ws.git ~/px4_fault_ws
 cd ~/px4_fault_ws/
 chmod +x ./scripts/*.sh
 ./scripts/build.sh
