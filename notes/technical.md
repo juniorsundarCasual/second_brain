@@ -2,8 +2,11 @@
 id: gnwkf6hnudwphdqnmpgfkml
 title: Technical
 desc: ''
-updated: 1704970122184
+updated: 1706080828489
 created: 1704869894847
 ---
 
-Technical contents
+* ### [[technical.frameworks]]
+* ### [[technical.libraries]]
+* ### [[technical.programming-languages]]
+* ### [[technical.terminologies]]

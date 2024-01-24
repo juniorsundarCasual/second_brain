@@ -1,20 +1,18 @@
 ---
 id: gqj2lcqbwu7umvdjjiwfyop
-title: Code Projects
+title: PKMS Server in Rust
 desc: ''
-updated: 1705218350593
+updated: 1706080671278
 created: 1705217843700
 ---
 
-# 1. PKMS Server in Rust
-
-## Concept
+# Concept
 
 I don't want to have to rely on VSCode of VSCodium to manage my research and notes. Having some sort of Rust implementation that acts as a server, and then integrating it with Neovim would be preferable.
 
 And rather than using plain Zettel or Obsidian as my baseline, it would be preferable to have something similar to the way Dendron manages information in a hierarchical manner.
 
-## Breakdown
+# Breakdown
 
 1. In Rust, develop a server with a list of functionalities similar to Dendron:
     - Markdown based
