@@ -2,9 +2,18 @@
 id: eqabonmfaof1drcpu47oyo9
 title: Literature Review
 desc: ''
-updated: 1705996970499
+updated: 1706011942069
 created: 1705388030204
 ---
+
+____
+<!-- TOC -->
+1. [Runtime Assurance of Aeronautical Products: Preliminary Recommendations](#runtime-assurance-of-aeronautical-products-preliminary-recommendations)
+2. [Digital Twin for UAV Anomaly Detection](#digital-twin-for-uav-anomaly-detection)
+3. [Fault Injector for Autonomous Quadrotors](#fault-injector-for-autonomous-quadrotors)
+<!-- /TOC -->
+
+____
 
 # [Runtime Assurance of Aeronautical Products: Preliminary Recommendations](https://ntrs.nasa.gov/api/citations/20220015734/downloads/tm-rta-guidance.pdf)
 
