@@ -158,6 +158,7 @@ if(fault_mode == 1 && !std::isnan(start_injection_time) && !std::isnan(end_injec
         gps_output.alt = gps.alt;
     }
 ```
+
 The second half of the report defines a prototype UI that can be used to inject the faults into the system. 
 
 PX4 contains various failsafes that allow it to detect anomalies internally and abort flights that exhibit said anomalies. In this experiment, the failsafe activation delays were set to minimum.
