@@ -2,7 +2,7 @@
 id: u5wyzvvhy0gyli06ndqwlld
 title: PX4 - Autopilot
 desc: ''
-updated: 1706003464297
+updated: 1706275787565
 created: 1704869894839
 tags:
   - software
@@ -152,68 +152,51 @@ param_get(accel_fault, &accel_fault_flag);
 
 if (accel_fault_flag == 1)
 {
-    param_t accel_noise = param_find("SENS_ACCEL_NOISE");
-    float_t accel_noise_flag;
-    param_get(accel_noise, &accel_noise_flag);
+	param_t accel_noise = param_find("SENS_ACCEL_NOISE");
+	float_t accel_noise_flag;
+	param_get(accel_noise, &accel_noise_flag);
 
-    if (abs(accel_noise_flag) > 0)
-    {
-        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-        std::default_random_engine generator (seed);
+	if (abs(accel_noise_flag) > 0)
+	{
+		imu.delta_velocity[0] += imu.delta_velocity[0]*generate_wgn(accel_noise_flag);
+		imu.delta_velocity[1] += imu.delta_velocity[1]*generate_wgn(accel_noise_flag);
+		imu.delta_velocity[2] += imu.delta_velocity[2]*generate_wgn(accel_noise_flag);
+	}
 
-        std::normal_distribution<float> distribution (0.0,accel_noise_flag);
-        float dev = distribution(generator);
-        imu.delta_velocity[0] += imu.delta_velocity[0]*dev;
-        imu.delta_velocity[1] += imu.delta_velocity[1]*dev;
-        imu.delta_velocity[2] += imu.delta_velocity[2]*dev;
-    }
+	param_t accel_bias_shift = param_find("SENS_ACCEL_SHIF");
+	float_t accel_bias_shift_flag;
+	param_get(accel_bias_shift, &accel_bias_shift_flag);
 
-    param_t accel_bias_shift = param_find("SENS_ACCEL_SHIF");
-    float_t accel_bias_shift_flag;
-    param_get(accel_bias_shift, &accel_bias_shift_flag);
+	if (abs(accel_bias_shift_flag) > 0)
+	{
+		imu.delta_velocity[0] += imu.delta_velocity[0]*accel_bias_shift_flag;
+		imu.delta_velocity[1] += imu.delta_velocity[1]*accel_bias_shift_flag;
+		imu.delta_velocity[2] += imu.delta_velocity[2]*accel_bias_shift_flag;
+	}
 
-    if (abs(accel_bias_shift_flag) > 0)
-    {
-        imu.delta_velocity[0] += imu.delta_velocity[0]*accel_bias_shift_flag;
-        imu.delta_velocity[1] += imu.delta_velocity[1]*accel_bias_shift_flag;
-        imu.delta_velocity[2] += imu.delta_velocity[2]*accel_bias_shift_flag;
-    }
+	param_t accel_bias_scale = param_find("SENS_ACCEL_SCAL");
+	float_t accel_bias_scale_flag;
+	param_get(accel_bias_scale, &accel_bias_scale_flag);
 
-    param_t accel_bias_scale = param_find("SENS_ACCEL_SCAL");
-    float_t accel_bias_scale_flag;
-    param_get(accel_bias_scale, &accel_bias_scale_flag);
+	if (abs(accel_bias_scale_flag) > 0)
+	{
+		imu.delta_velocity[0] *= accel_bias_scale_flag;
+		imu.delta_velocity[1] *= accel_bias_scale_flag;
+		imu.delta_velocity[2] *= accel_bias_scale_flag;
+	}
 
-    if (abs(accel_bias_scale_flag) > 0)
-    {
-        imu.delta_velocity[0] *= accel_bias_scale_flag;
-        imu.delta_velocity[1] *= accel_bias_scale_flag;
-        imu.delta_velocity[2] *= accel_bias_scale_flag;
-    }
+	param_t accel_drift = param_find("SENS_ACCEL_DRIFT");
+	float_t accel_drift_flag;
+	param_get(accel_drift, &accel_drift_flag);
 
-    param_t accel_drift = param_find("SENS_ACCEL_DRIFT");
-    float_t accel_drift_flag;
-    param_get(accel_drift, &accel_drift_flag);
+	if (abs(accel_drift_flag) > 0)
+	{
+		imu.delta_velocity[0] += 0.01f*accel_drift_flag*accel_drift_timestep/1000000;
+		imu.delta_velocity[1] += 0.01f*accel_drift_flag*accel_drift_timestep/1000000;
+		imu.delta_velocity[2] += 0.01f*accel_drift_flag*accel_drift_timestep/1000000;
 
-    if (abs(accel_drift_flag) > 0)
-    {
-        //! Will have to initialise and declare 'accel_drift_timestep'
-        imu.delta_velocity[0] += 0.01f*accel_drift_flag*accel_drift_timestep/1000000;
-        imu.delta_velocity[1] += 0.01f*accel_drift_flag*accel_drift_timestep/1000000;
-        imu.delta_velocity[2] += 0.01f*accel_drift_flag*accel_drift_timestep/1000000;
-
-        accel_drift_timestep += 1;
-    }
-
-    param_t accel_zero = param_find("SENS_ACCEL_ZERO");
-    int32_t accel_zero_flag;
-    param_get(accel_zero, &accel_zero_flag);
-
-    if (accel_zero_flag == 1)
-    {
-        imu.delta_velocity[0] = 0;
-        imu.delta_velocity[1] = 0;
-        imu.delta_velocity[2] = 0;
-    }
+		accel_drift_timestep += 1;
+	}
 }
 
 // Adding faults to the gyroscope
@@ -223,68 +206,51 @@ param_get(gyro_fault, &gyro_fault_flag);
 
 if (gyro_fault_flag == 1)
 {
-    param_t gyro_noise = param_find("SENS_GYRO_NOISE");
-    float_t gyro_noise_flag;
-    param_get(gyro_noise, &gyro_noise_flag);
+	param_t gyro_noise = param_find("SENS_GYRO_NOISE");
+	float_t gyro_noise_flag;
+	param_get(gyro_noise, &gyro_noise_flag);
 
-    if (abs(gyro_noise_flag) > 0)
-    {
-        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-        std::default_random_engine generator (seed);
+	if (abs(gyro_noise_flag) > 0)
+	{
+		imu.delta_angle[0] += imu.delta_angle[0]*generate_wgn(gyro_noise_flag);
+		imu.delta_angle[1] += imu.delta_angle[0]*generate_wgn(gyro_noise_flag);
+		imu.delta_angle[2] += imu.delta_angle[0]*generate_wgn(gyro_noise_flag);
+	}
 
-        std::normal_distribution<float> distribution (0.0,gyro_noise_flag);
-        float dev = distribution(generator);
-        imu.delta_angle[0] += imu.delta_angle[0]*dev;
-        imu.delta_angle[1] += imu.delta_angle[0]*dev;
-        imu.delta_angle[2] += imu.delta_angle[0]*dev;
-    }
+	param_t gyro_bias_shift = param_find("SENS_GYRO_SHIF");
+	float_t gyro_bias_shift_flag;
+	param_get(gyro_bias_shift, &gyro_bias_shift_flag);
 
-    param_t gyro_bias_shift = param_find("SENS_GYRO_SHIF");
-    float_t gyro_bias_shift_flag;
-    param_get(gyro_bias_shift, &gyro_bias_shift_flag);
+	if (abs(gyro_bias_shift_flag) > 0)
+	{
+		imu.delta_angle[0] += imu.delta_angle[0]*gyro_bias_shift_flag;
+		imu.delta_angle[1] += imu.delta_angle[1]*gyro_bias_shift_flag;
+		imu.delta_angle[2] += imu.delta_angle[2]*gyro_bias_shift_flag;
+	}
 
-    if (abs(gyro_bias_shift_flag) > 0)
-    {
-        imu.delta_angle[0] += imu.delta_angle[0]*gyro_bias_shift_flag;
-        imu.delta_angle[1] += imu.delta_angle[1]*gyro_bias_shift_flag;
-        imu.delta_angle[2] += imu.delta_angle[2]*gyro_bias_shift_flag;
-    }
+	param_t gyro_bias_scale = param_find("SENS_GYRO_SCAL");
+	float_t gyro_bias_scale_flag;
+	param_get(gyro_bias_scale, &gyro_bias_scale_flag);
 
-    param_t gyro_bias_scale = param_find("SENS_GYRO_SCAL");
-    float_t gyro_bias_scale_flag;
-    param_get(gyro_bias_scale, &gyro_bias_scale_flag);
+	if (abs(gyro_bias_scale_flag) > 0)
+	{
+		imu.delta_angle[0] *= gyro_bias_scale_flag;
+		imu.delta_angle[1] *= gyro_bias_scale_flag;
+		imu.delta_angle[2] *= gyro_bias_scale_flag;
+	}
 
-    if (abs(gyro_bias_scale_flag) > 0)
-    {
-        imu.delta_angle[0] *= gyro_bias_scale_flag;
-        imu.delta_angle[1] *= gyro_bias_scale_flag;
-        imu.delta_angle[2] *= gyro_bias_scale_flag;
-    }
+	param_t gyro_drift = param_find("SENS_GYRO_DRIFT");
+	float_t gyro_drift_flag;
+	param_get(gyro_drift, &gyro_drift_flag);
 
-    param_t gyro_drift = param_find("SENS_GYRO_DRIFT");
-    float_t gyro_drift_flag;
-    param_get(gyro_drift, &gyro_drift_flag);
+	if (abs(gyro_drift_flag) > 0)
+	{
+		imu.delta_angle[0] += 0.01f*gyro_drift_flag*gyro_drift_timestep/1000000;
+		imu.delta_angle[1] += 0.01f*gyro_drift_flag*gyro_drift_timestep/1000000;
+		imu.delta_angle[2] += 0.01f*gyro_drift_flag*gyro_drift_timestep/1000000;
 
-    if (abs(gyro_drift_flag) > 0)
-    {
-        //! Will have to initialise and declare 'gyro_drift_timestep'
-        imu.delta_angle[0] += 0.01f*gyro_drift_flag*gyro_drift_timestep/1000000;
-        imu.delta_angle[1] += 0.01f*gyro_drift_flag*gyro_drift_timestep/1000000;
-        imu.delta_angle[2] += 0.01f*gyro_drift_flag*gyro_drift_timestep/1000000;
-
-        gyro_drift_timestep += 1;
-    }
-
-    param_t gyro_zero = param_find("SENS_GYRO_ZERO");
-    int32_t gyro_zero_flag;
-    param_get(gyro_zero, &gyro_zero_flag);
-
-    if (gyro_zero_flag == 1)
-    {
-        imu.delta_angle[0] = 10000;
-        imu.delta_angle[1] = 10000;
-        imu.delta_angle[2] = 10000;
-    }
+		gyro_drift_timestep += 1;
+	}
 }
 ```
 </details>
@@ -307,63 +273,58 @@ Some cases are different when working with the SITL or the actual drone. For ins
 param_t gps_fault = param_find("SENS_GPS_FAULT");
 int32_t gps_fault_flag;
 param_get(gps_fault, &gps_fault_flag);
+
 if (gps_fault_flag == 1)
-
 {
-    param_t gps_noise = param_find("SENS_GPS_NOISE");
-    float_t gps_noise_flag;
-    param_get(gps_noise, &gps_noise_flag);
+	param_t gps_noise = param_find("SENS_GPS_NOISE");
+	float_t gps_noise_flag;
+	param_get(gps_noise, &gps_noise_flag);
 
-    if (abs(gps_noise_flag) > 0)
-    {
-        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-        std::default_random_engine generator (seed);
+	if (abs(gps_noise_flag) > 0)
+	{
+		sensor_gps.latitude_deg += sensor_gps.latitude_deg*(double)generate_wgn(gps_noise_flag);
+		sensor_gps.longitude_deg += sensor_gps.longitude_deg*(double)generate_wgn(gps_noise_flag);
+		sensor_gps.altitude_msl_m += sensor_gps.altitude_msl_m*(double)generate_wgn(gps_noise_flag);
+		sensor_gps.altitude_ellipsoid_m += sensor_gps.altitude_ellipsoid_m*(double)generate_wgn(gps_noise_flag);
+	}
 
-        std::normal_distribution<double> distribution (0.0,static_cast<double>(gps_noise_flag));
-        double dev = distribution(generator);
-        sensor_gps.latitude_deg += sensor_gps.latitude_deg*dev;
-        sensor_gps.longitude_deg += sensor_gps.longitude_deg*dev;
-        sensor_gps.altitude_msl_m += sensor_gps.altitude_msl_m*dev;
-        sensor_gps.altitude_ellipsoid_m += sensor_gps.altitude_ellipsoid_m*dev;
-    }
+	param_t gps_bias_shift = param_find("SENS_GPS_SHIF");
+	float_t gps_bias_shift_flag;
+	param_get(gps_bias_shift, &gps_bias_shift_flag);
 
-    param_t gps_bias_shift = param_find("SENS_GPS_SHIF");
-    float_t gps_bias_shift_flag;
-    param_get(gps_bias_shift, &gps_bias_shift_flag);
+	if (abs(gps_bias_shift_flag) > 0)
+	{
+		sensor_gps.latitude_deg += sensor_gps.latitude_deg*static_cast<double>(gps_bias_shift_flag);
+		sensor_gps.longitude_deg += sensor_gps.longitude_deg*static_cast<double>(gps_bias_shift_flag);
+		sensor_gps.altitude_msl_m += sensor_gps.altitude_msl_m*static_cast<double>(gps_bias_shift_flag);
+		sensor_gps.altitude_ellipsoid_m += sensor_gps.altitude_ellipsoid_m*static_cast<double>(gps_bias_shift_flag);
+	}
 
-    if (abs(gps_bias_shift_flag) > 0)
-    {
-        sensor_gps.latitude_deg += sensor_gps.latitude_deg*static_cast<double>(gps_bias_shift_flag);
-        sensor_gps.longitude_deg += sensor_gps.longitude_deg*static_cast<double>(gps_bias_shift_flag);
-        sensor_gps.altitude_msl_m += sensor_gps.altitude_msl_m*static_cast<double>(gps_bias_shift_flag);
-        sensor_gps.altitude_ellipsoid_m += sensor_gps.altitude_ellipsoid_m*static_cast<double>(gps_bias_shift_flag);
-    }
+	param_t gps_bias_scale = param_find("SENS_GPS_SCAL");
+	float_t gps_bias_scale_flag;
+	param_get(gps_bias_scale, &gps_bias_scale_flag);
 
-    param_t gps_bias_scale = param_find("SENS_GPS_SCAL");
-    float_t gps_bias_scale_flag;
-    param_get(gps_bias_scale, &gps_bias_scale_flag);
+	if (abs(gps_bias_scale_flag) > 0)
+	{
+		sensor_gps.latitude_deg *= static_cast<double>(gps_bias_scale_flag);
+		sensor_gps.longitude_deg *= static_cast<double>(gps_bias_scale_flag);
+		sensor_gps.altitude_msl_m *= static_cast<double>(gps_bias_scale_flag);
+		sensor_gps.altitude_ellipsoid_m *= static_cast<double>(gps_bias_scale_flag);
+	}
 
-    if (abs(gps_bias_scale_flag) > 0)
-    {
-        sensor_gps.latitude_deg *= static_cast<double>(gps_bias_scale_flag);
-        sensor_gps.longitude_deg *= static_cast<double>(gps_bias_scale_flag);
-        sensor_gps.altitude_msl_m *= static_cast<double>(gps_bias_scale_flag);
-        sensor_gps.altitude_ellipsoid_m *= static_cast<double>(gps_bias_scale_flag);
-    }
+	param_t gps_drift = param_find("SENS_GPS_DRIFT");
+	float_t gps_drift_flag;
+	param_get(gps_drift, &gps_drift_flag);
 
-    param_t gps_drift = param_find("SENS_GPS_DRIFT");
-    float_t gps_drift_flag;
-    param_get(gps_drift, &gps_drift_flag);
+	if (abs(gps_drift_flag) > 0)
+	{
+		sensor_gps.latitude_deg += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
+		sensor_gps.longitude_deg += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
+		sensor_gps.altitude_msl_m += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
+		sensor_gps.altitude_ellipsoid_m += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
 
-    if (abs(gps_drift_flag) > 0)
-    {
-        sensor_gps.latitude_deg += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
-        sensor_gps.longitude_deg += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
-        sensor_gps.altitude_msl_m += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
-        sensor_gps.altitude_ellipsoid_m += 0.01*static_cast<double>(gps_drift_flag)*gps_drift_timestep/1000000;
-
-        gps_drift_timestep += 1;
-    }
+		gps_drift_timestep += 1;
+	}
 }
 ```
 </details>

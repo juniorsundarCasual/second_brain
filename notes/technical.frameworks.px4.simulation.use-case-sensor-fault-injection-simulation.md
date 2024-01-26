@@ -2,7 +2,7 @@
 id: iy678vzhpal24bmiva4prsf
 title: Use Case - Sensor Fault Injection Simulation
 desc: ''
-updated: 1706102293087
+updated: 1706262451818
 created: 1706075704862
 ---
 
@@ -30,7 +30,7 @@ ___
 
 ## Concept
 
-![[ideas.srta-exploration.literature-review#introduction-1]]
+![[Concept from literature review | ideas.srta-exploration.literature-review#introduction-1]]
 
 ## Summary
 
