@@ -1,32 +1,27 @@
 # Introduction
-	- Simulators allow PX4 flight code to control a computer modeled vehicle in a simulated environment, with the same level of software interactability as the real drone. PX4 supports both [Software in the Loop]([[Terminology/Software-in-the-Loop]]) (SITL) and [Hardware in the Loop]([[Terminology/Hardware-in-the-Loop]]).
-	- There are few supported simulators by the PX4 flight controller.
+	- Simulators allow PX4 flight code to control a computer modeled vehicle in a simulated environment, with the same level of software interactability as the real drone. PX4 supports both [Software in the Loop]([[Terminology/Software-in-the-Loop]]) (SITL) and [Hardware in the Loop]([[Terminology/Hardware-in-the-Loop]]) (HITL).
 - # Simulators
-	- Since the PX4 is an important component in the system's design, it is used as
-	    the starting point for this search. While simulation can take place with a
-	    wide variety of softwares and physics environments, it is best to start from
-	    a point where PX4 is supported out-of-the-box. PX4's dev {https://dev.px4.io/v1.11_noredirect/en/simulation/}[documentation] lists the
-	    following simulation options:
-	    ~ Gazebo
-	    ~ jMAVSim
-	    ~ FlightGear
-	    ~ Microsoft AirSim
-	  
-	  ** Gazebo
-	  
-	     /Access documentation {https://dev.px4.io/v1.11_noredirect/en/simulation/gazebo.html}[here]./
-	- *Advantages*
-	   -- Wide variety of sensor support through plugins. Useful when use cases
-	      extend into sensor data streams.
-	   -- Able to simulate multiple vehicles at the same time. More scalable
-	      than the other options.
-	   -- Comes with ROS/ROS2 support out-of-the-box
-	- *Disadvantages*
-	   -- Preferred if ROS is being used. Otherwise, there are cheaper
-	      (resource use wise) options.
-	   -- Less accurate (only marginally) in replicating flight behaviour.
-	  
-	  ** jMAVSim
+	- Since the PX4 is an important component in the system's design, it is used as the starting point for this search. While simulation can take place with a wide variety of softwares and physics environments, it is best to start from a point where PX4 is supported out-of-the-box. PX4's dev [documentation](https://dev.px4.io/v1.11_noredirect/en/simulation/) lists the following simulation options:
+		- Gazebo
+		  logseq.order-list-type:: number
+		- jMAVSim
+		  logseq.order-list-type:: number
+		- FlightGear
+		  logseq.order-list-type:: number
+		- Microsoft AirSim
+		  logseq.order-list-type:: number
+	- ## Gazebo
+	  collapsed:: true
+		- > Access documentation [here](https://dev.px4.io/v1.11_noredirect/en/simulation/gazebo.html).
+		- ### Advantages
+			- Wide variety of sensor support through plugins. Useful when use cases extend into sensor data streams.
+			- Able to simulate multiple vehicles at the same time. More scalable than the other options.
+			- Comes with ROS/ROS2 support out-of-the-box
+		- ### Disadvantages
+		   -- Preferred if ROS is being used. Otherwise, there are cheaper
+		      (resource use wise) options.
+		   -- Less accurate (only marginally) in replicating flight behaviour.
+	- ## jMAVSim
 	  
 	  /Access documentation {https://dev.px4.io/v1.11_noredirect/en/simulation/jmavsim.html}[here]./
 	- *Advantages*
