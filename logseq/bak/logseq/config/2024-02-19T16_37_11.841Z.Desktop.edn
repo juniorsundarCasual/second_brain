@@ -421,6 +421,6 @@
  :file/name-format :triple-lowbar
  :journal/page-title-format "dd-MM-yyyy"
  :editor/preferred-pasting-file? true
- :graph/settings {:journal? false
+ :graph/settings {:journal? true
  :orphan-pages? true
  :builtin-pages? false}}

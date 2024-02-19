@@ -1,6 +1,8 @@
 # Introduction
+collapsed:: true
 	- Simulators allow PX4 flight code to control a computer modeled vehicle in a simulated environment, with the same level of software interactability as the real drone. PX4 supports both [Software in the Loop]([[Terminology/Software-in-the-Loop]]) (SITL) and [Hardware in the Loop]([[Terminology/Hardware-in-the-Loop]]) (HITL).
 - # Simulators
+  collapsed:: true
 	- Since the PX4 is an important component in the system's design, it is used as the starting point for this search. While simulation can take place with a wide variety of softwares and physics environments, it is best to start from a point where PX4 is supported out-of-the-box. PX4's dev [documentation](https://dev.px4.io/v1.11_noredirect/en/simulation/) lists the following simulation options:
 		- Gazebo
 		  logseq.order-list-type:: number
@@ -11,62 +13,46 @@
 		- Microsoft AirSim
 		  logseq.order-list-type:: number
 	- ## Gazebo
-	  collapsed:: true
 		- > Access documentation [here](https://dev.px4.io/v1.11_noredirect/en/simulation/gazebo.html).
 		- ### Advantages
 			- Wide variety of sensor support through plugins. Useful when use cases extend into sensor data streams.
 			- Able to simulate multiple vehicles at the same time. More scalable than the other options.
 			- Comes with ROS/ROS2 support out-of-the-box
 		- ### Disadvantages
-		   -- Preferred if ROS is being used. Otherwise, there are cheaper
-		      (resource use wise) options.
-		   -- Less accurate (only marginally) in replicating flight behaviour.
+			- Preferred if ROS is being used. Otherwise, there are cheaper (resource use wise) options.
+			- Less accurate (only marginally) in replicating flight behaviour.
 	- ## jMAVSim
-	  
-	  /Access documentation {https://dev.px4.io/v1.11_noredirect/en/simulation/jmavsim.html}[here]./
-	- *Advantages*
-	   -- Able to simulate multiple vehicles at the same time. Most scalable as
-	      it is lightweight.
-	   -- Simulation responds appropriately to various fail conditions (GPS
-	      failure, {https://www.researchgate.net/publication/353541566_Experimental_Implementation_of_an_Adaptive_Digital_Autopilot}[adversarial flight conditions], etc.)
-	   -- Comes with ROS/ROS2 support out-of-the-box.
-	   -- Extremely lightweight (resource use wise).
-	   -- Easy to set-up.
-	- *Disadvantages*
-	   -- No ROS 2 support. Limited out-of-the-box ROS 1 support. It is stated
-	      here that it is possible to set up ROS interface onboard the same way
-	      as with a real vehicle. No examples available, so will have to test
-	      this out separately.
-	   -- Least accurate option to replicate drone behaviour.
-	   -- Limited to only multi-rotor/quadrotor setups.
-	   -- More difficult to set-up multi-vehicle simulation than Gazebo.
-	  
-	  ** FlightGear
-	  
-	  /Access documentation {https://dev.px4.io/v1.11_noredirect/en/simulation/flightgear.html}[here]./
-	- *Advantages*
-	   -- Most accurate simulator. Able to replicate weather conditions very
-	      close to reality.
-	   -- Able to simulate multiple vehicles at the same time.
-	- *Disadvantages*
-	   -- Limited support available with ROS. No indication if there is ROS 2
-	      support.
-	   -- Very heavy in resource usage. Excessive for most application cases.
-	   -- Due to resource usage, there is a limit on how many drones can be
-	      simulated at the same time.
-	  
-	  ** Microsoft AirSim
-	  
-	  /Access documentation {https://dev.px4.io/v1.11_noredirect/en/simulation/airsim.html}[here]./
-	- *Advantages*
-	   -- Built on Unreal Engine. Realistic physics simulation.
-	- *Disadvantages*
-	   -- Limited support available with ROS. No indication if there is ROS 2
-	      support.
-	   -- No indication of support with latest Linux kernels.
-	   -- No support for multiple vehicle simulations at the same time.
-	   -- Very high resource usage.
-	   -- No support for multiple vehicle simulations at the same time.
+		- > Access documentation [here](https://dev.px4.io/v1.11_noredirect/en/simulation/jmavsim.html)[here].
+		- ### Advantages
+			- Able to simulate multiple vehicles at the same time. Most scalable as it is lightweight
+			- Simulation responds appropriately to various fail conditions (GPS failure, [adversarial flight conditions](https://www.researchgate.net/publication/353541566_Experimental_Implementation_of_an_Adaptive_Digital_Autopilot), etc.)
+			- Comes with ROS/ROS2 support out-of-the-box.
+			- Extremely lightweight (resource use wise).
+			- Easy to set-up.
+		- ### Disadvantages
+			- No ROS 2 support. Limited out-of-the-box ROS 1 support. It is stated here that it is possible to set up ROS interface onboard the same way as with a real vehicle. No examples available, so will have to test this out separately.
+			- Least accurate option to replicate drone behaviour.
+			- Limited to only multi-rotor/quadrotor setups.
+			- More difficult to set-up multi-vehicle simulation than Gazebo.
+	- ## FlightGear
+		- > Access documentation [here](https://dev.px4.io/v1.11_noredirect/en/simulation/flightgear.html).
+		- ### Advantages
+			- Most accurate simulator. Able to replicate weather conditions very close to reality.
+			- Able to simulate multiple vehicles at the same time.
+		- ### Disadvantages
+			- Limited support available with ROS. No indication if there is ROS 2 support.
+			- Very heavy in resource usage. Excessive for most application cases.
+			- Due to resource usage, there is a limit on how many drones can be simulated at the same time.
+	- ## Microsoft AirSim
+		- > Access documentation [here](ttps://dev.px4.io/v1.11_noredirect/en/simulation/airsim.html).
+		- ### Advantages
+			- Built on Unreal Engine. Realistic physics simulation.
+		- ### Disadvantages
+			- Limited support available with ROS. No indication if there is ROS 2 support.
+			- No indication of support with latest Linux kernels.
+			- No support for multiple vehicle simulations at the same time.
+			- Very high resource usage.
+			- No support for multiple vehicle simulations at the same time.
 - # Software-in-the-Loop (SITL)
 	- > Access [reference]([[Terminology/Software-in-the-Loop]])
 	- ## Set-Up
