@@ -299,7 +299,7 @@
  ;;  :charge-range    600}   ; Default value: 600
 
  ;; Favorites to list on the left sidebar
- :favorites ["Go - The Complete Guide"]
+ :favorites ["The Good Teacher" "Go - The Complete Guide"]
 
  ;; Set flashcards interval.
  ;; Expected value:
