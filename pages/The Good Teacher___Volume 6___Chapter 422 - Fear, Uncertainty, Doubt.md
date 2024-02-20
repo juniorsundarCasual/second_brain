@@ -1,0 +1,53 @@
+- Wei Zao's anxiety mounted with each passing second the day he left the Capital. In his past life, he'd come accross many a doomsday preppers and forseer, but he knew at the end of the day that it was all just the result of mass-paranoia. Idle or troubled minds tend to formulate such fantasies. But in the end that was all they were, wild fantasies.
+- But Wei Zao knew better now. He knew that the world was about to end. It could happen today, it could happen tomorrow. And there was nothing he could do to stop it. He could try, but he would fail.
+- There is something beautiful about hitting rock bottom, especially in how it disperses all the clouds hanging inside an ignorant mind. Wei Zao realised that he'd been on a guaranteed path to rock bottom from the moment the darned Library spawned in his mind. With its presence, he was essentially pushed into an echo chamber that affirmed his base habits and fellated the primal part of his character that yearned to dominate and gain the recognition of those around him. With each passing conflict that the Library helped him out of, he grew more and more dependent on it, and in the process succumbed harder to his base instincts and desires. He thought he could live a different life with this new opportunity, and he did. But was it a better life, he begged to differ. The recognition he gained wasn't his, nor were his successes.
+  Even looking towards Gaige made him retch internally. He had fooled the lad thoroughly, into thinking that he was a reliable educator - someone who could guide him down a path of betterment. It was all a lie.
+  And in the end, when he came face to face with reality - and understood the purpose to his transmigration, his first thought wasn't rooted in confidence, but steeped in fear, uncertainty, and doubt. Wei Zao understood just what he was - a fraud. He could deny it no more.
+- And the feeling of living as a fraud was gut-wrenching. He cycled through every negative emotion in the spectrum periodically, every day. He wished that these thoughts would cease, and he could live a normal life. The burden of responsibility was far to heavy for a man with his weak mental constitution to bear. Wei Zao wasn't a leader, nor was he a visionary. He was someone who reveled in the security that those in power cast upon him, and took advantage of that privilege to complain when things didn't go his way. In his past life, the security came from the powers that be, and in this life, it came from the Library.
+- But the security offered by the Library was all an illusion. And with that illusion diffused, Wei Zao was frantically searching for the next shade he could find security within. Luckily, he found one cast by Guy Larks. The sunlight that bore down on him as he traversed like a madman burned him continuously. He needed to find the shade fast!
+- The moment he arrived at Twilight Village, his anxiety reached its peak. It was do or die!
+- That was when his attention landed on the blind kid. The fact that the kid could carry a tree-trunk twice his height and probably multiple times his own body weight was a surefire sign that he was a cultivator. And the moment the Library generated an entry for this kid, he KNEW that Guy was close.
+- ____
+- Cultivation Method: Unknown
+- ____
+- The last time he saw this was when he recorded Markus and Guy. Once was an outlier, twice is a coincidence, but three marks a trend. And his evaluation proved true, as soon after, Markus arrived at the scene. This was enough. The heaviness weighing down on his chest dissipated almost instantaneously. And as he walked up the stairs leading up to the Sect, Wei Zao could almost feel himself skipping. But he truly wasn't unburdened, as a sense of immense guilt hung over him. He glanced back with the corner of his gaze and noticed Gaige following along. He knew that he would have to reveal the complete truth to him eventually, he just wasn't sure when the right time would be and how he should approach the topic. Little did he realise that the moment would arrive very soon.
+- Markus deposited the duo at the salon in the Sect's Administrative building, and disappeared off to fetch Guy.
+- "So is Sect Leader Guy Larks a traveller from another world like you, Teacher?" Gaige probed.
+- "He is, though it isn't from the same world that I come from," Wei Zao clarified.
+- "Does this difference have any effect?" Gaige followed up.
+- "Not that I know of. Essentially, we are bound by the rules of this world," he answered, before mumbling, "barring some exceptions."
+- "In that case, I don't understand," Gaige expressed. He looked towards Wei Zao, who tilted his head in anticipation. "Why are we approaching Sect Leader Guy Larks? To the best of my knowledge, Teacher Way is in a far superior position as a 2-star Teacher compared to Sect Leader Larks, who leads a Sect that I haven't even heard of. Shouldn't he be the one approaching us?"
+- Before Wei Zao could answer, the boy snapped out irritatedly, "Why are we the ones bending?!"
+- "We aren't bending-"
+- "Yes we are!" Gaige interjected. "I don't get it. We travelled all the way from the Capital to a village no one's even heard of, to visit a man who leads a sect that no one's even heard of, all so that we can join forces?"
+- "It seems you think that I am better than Guy just because I am more famous," Wei Zao commented with a bitter smile. "You cannot really judge someone's capacity by how much fame they've accrued."
+- "Why not? You are famous because you earned it!"
+- "I didn't earn it."
+- "You're being modest-"
+- "I am not being modest, Gaige!" Wei Zao bellowed with a manic expression. "I'm..."
+- He let out a long exhale and said, "I'm nothing but a fraud, Gaige. I've been fooling everyone, even myself, into thinking I am someone more capable than I really am. I'm not!"
+- "What are you saying, Teacher Way! You're the one who helped me realise my Bloodline. You're the one who has helped me reach heights I wouldn't have been able to reach-"
+  "That wasn't me!" Wei Zao screeched. "Look Gaige, as a bonus to my transmigration I was given a boost - a special ability if you will. It helps me analyse anyone or anything I inspect, and tells me everything there is to know about it as long as it is knowledge that has been excavated in this world. I've been using that ability this entire time, to teach you, to gain all my accolades, and to grow stronger."
+- "That..."
+  "It was this power that revealed your bloodline to me, and it was also this power that taught me the method to unleash it. It was this power that explain how you'd have to cultivate to grow stronger- Basically, everything I have done until this point has been, in large part, a result of me following the instructions prescribed to me through this power. Do you understand, Gaige? I'm a fraud! I FRAUD!"
+- "T-Teacher-"
+  "Stop calling me that! I don't deserve it!" Wei Zao bellowed with bloodshot eyes brimming with tears. "I can't do anything on my own. But Guy- Guy's different! He's better than I am..."
+- "D-Doesn't Sect Leader Larks have the same power as you do?"
+- "He doesn't," Wei Zao responded with certainty. "He couldn't. Everything he does is original in this world. I can't use my power to inspect anyone on this Sect."
+- A tense silence descended in the room, disturbed only by the period heaving breath of Wei Zao as he tried to calm himself. "In truth, you would be far better off learning under Guy than me."
+- "What are you saying, Teacher Way?! Fortune is also a skill. You gained this power through your fortune, and you chose to use this fortune to uplift me. For that I will always be grateful. So please, stop depracating yourself like this!"
+- At that moment, the door to the salon slid open. Wei Zao expected Guy to appear, but it was only Markus.
+- "Master Larks will be here shortly. I will serve refreshments in the meantime," Markus declared before walking forth and placing a tray with two cups filled with aromatic tea. "Our Sect is lacking in many luxuries, but quality tea we have in abundance thanks to Matron Reva. Please enjoy."
+- Wei Zao let out a weak smile before picking up his cup and inhaling the pleasant scent. He took a sip and let the liquid that somehow smelled AND tasted of rose roll through his esophagus, assuaging the stress that had him in knots. Gaige, however did not take his cup. Instead, his eyes drilled down on Markus.
+- "You're in the same cultivation realm as I am," Gaige stated.
+- "I believe so," Markus affirmed.
+- "Spar with me," Gaige challenged.
+- "Excuse me?"
+- "Spar with me," Gaige repeated before standing up and approaching Markus. "I would like to trade a few pointers, with you."
+- "Why?" Markus blurted out in response.
+- "Why must there be a reason to spar?" Gaige scoffed. "Don't tell me, you're scared?"
+- Markus smiled and stood to opponse Gaige, "You're trying to goad me with insults. That isn't necessary. I accept your challenge for a spar."
+- Markus gestured for Gaige to follow as he left the room.
+- "Gaige, what are you doing?!" Wei Zao asked in a harsh whisper.
+- "I will prove to you, Teacher, that your efforts haven't been in vain!" Gaige declared while revealing a confident smile. "I will defeat him, just as I did before."
+- "Why did you have to say that..." Wei Zao said with a sigh as he palmed his forehead in frustration.
