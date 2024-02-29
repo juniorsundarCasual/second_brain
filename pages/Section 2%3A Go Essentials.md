@@ -35,6 +35,7 @@
 	    contains a boolean value. In that case, the loop will continue to execute the
 	    code nested in the loop until the codition/variable yields `false`
 - # Examples
+  collapsed:: true
 	- ## Investment Calculator
 		- ```go
 		  // investment_calculator.go
