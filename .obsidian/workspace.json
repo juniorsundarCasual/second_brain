@@ -28,7 +28,7 @@
                 "file": "journal/2024-03-01.md",
                 "mode": "source",
                 "backlinks": true,
-                "source": false
+                "source": true
               }
             }
           },
@@ -175,12 +175,12 @@
   },
   "active": "6053c0785d9174d3",
   "lastOpenFiles": [
-    "journal/2024-03-02.md",
+    "Tasks Plugin - Review and check your Statuses 2024-03-01 19-05-48.md",
     "journal/2024-03-01.md",
+    "journal/2024-03-02.md",
     "Untitled.md",
     "literature-review/liu2024.md",
     "terminologies/Federated Learning.md",
-    "Tasks Plugin - Review and check your Statuses 2024-03-01 19-05-48.md",
     "literature-review/gandhe2022.md",
     "terminologies/Nash Equilibrium.md",
     "Tasks Plugin - Review and check your Statuses 2024-03-01 19-04-05.md",
