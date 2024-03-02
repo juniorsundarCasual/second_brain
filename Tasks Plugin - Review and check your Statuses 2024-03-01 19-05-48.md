@@ -21,32 +21,32 @@ Obsidian may only render the table correctly in Reading Mode.
 
 These are the status values in the Core and Custom statuses sections.
 
-| Status Symbol | Next Status Symbol | Status Name | Status Type   | Problems (if any)                                        |
-| ------------- | ------------------ | ----------- | ------------- | -------------------------------------------------------- |
-| `space`       | `/`                | Todo        | `TODO`        |                                                          |
-| `x`           | `space`            | Done        | `DONE`        |                                                          |
-| `/`           | `x`                | In Progress | `IN_PROGRESS` |                                                          |
-| `-`           | `space`            | Cancelled   | `CANCELLED`   |                                                          |
-| `space`       | `x`                | Unchecked   | `TODO`        | Duplicate symbol '`space`': this status will be ignored. |
-| `x`           | `space`            | Checked     | `DONE`        | Duplicate symbol '`x`': this status will be ignored.     |
-| `>`           | `x`                | Rescheduled | `TODO`        |                                                          |
-| `<`           | `x`                | Scheduled   | `TODO`        |                                                          |
-| `!`           | `x`                | Important   | `TODO`        |                                                          |
-| `?`           | `x`                | Question    | `TODO`        |                                                          |
-| `*`           | `x`                | Star        | `TODO`        |                                                          |
-| `n`           | `x`                | Note        | `TODO`        |                                                          |
-| `l`           | `x`                | Location    | `TODO`        |                                                          |
-| `i`           | `x`                | Information | `TODO`        |                                                          |
-| `I`           | `x`                | Idea        | `TODO`        |                                                          |
-| `S`           | `x`                | Amount      | `TODO`        |                                                          |
-| `p`           | `x`                | Pro         | `TODO`        |                                                          |
-| `c`           | `x`                | Con         | `TODO`        |                                                          |
-| `b`           | `x`                | Bookmark    | `TODO`        |                                                          |
-| `f`           | `x`                | Fire        | `TODO`        |                                                          |
-| `k`           | `x`                | Key         | `TODO`        |                                                          |
-| `w`           | `x`                | Win         | `TODO`        |                                                          |
-| `u`           | `x`                | Up          | `TODO`        |                                                          |
-| `d`           | `x`                | Down        | `TODO`        |                                                          |
+| Status Symbol | Next Status Symbol | Status Name | Status Type | Problems (if any) |
+| ----- | ----- | ----- | ----- | ----- |
+| `space` | `/` | Todo | `TODO` |  |
+| `x` | `space` | Done | `DONE` |  |
+| `/` | `x` | In Progress | `IN_PROGRESS` |  |
+| `-` | `space` | Cancelled | `CANCELLED` |  |
+| `space` | `x` | Unchecked | `TODO` | Duplicate symbol '`space`': this status will be ignored. |
+| `x` | `space` | Checked | `DONE` | Duplicate symbol '`x`': this status will be ignored. |
+| `>` | `x` | Rescheduled | `TODO` |  |
+| `<` | `x` | Scheduled | `TODO` |  |
+| `!` | `x` | Important | `TODO` |  |
+| `?` | `x` | Question | `TODO` |  |
+| `*` | `x` | Star | `TODO` |  |
+| `n` | `x` | Note | `TODO` |  |
+| `l` | `x` | Location | `TODO` |  |
+| `i` | `x` | Information | `TODO` |  |
+| `I` | `x` | Idea | `TODO` |  |
+| `S` | `x` | Amount | `TODO` |  |
+| `p` | `x` | Pro | `TODO` |  |
+| `c` | `x` | Con | `TODO` |  |
+| `b` | `x` | Bookmark | `TODO` |  |
+| `f` | `x` | Fire | `TODO` |  |
+| `k` | `x` | Key | `TODO` |  |
+| `w` | `x` | Win | `TODO` |  |
+| `u` | `x` | Up | `TODO` |  |
+| `d` | `x` | Down | `TODO` |  |
 
 ## Loaded Settings
 
