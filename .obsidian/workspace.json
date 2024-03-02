@@ -13,23 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "journal/2024-03-01.md",
+                "file": "journal/2024-03-02.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "6053c0785d9174d3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "journal/2024-03-01.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": true
               }
             }
           },
@@ -46,8 +33,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -113,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "journal/2024-03-01.md",
+                "file": "journal/2024-03-02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "journal/2024-03-01.md",
+                "file": "journal/2024-03-02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "journal/2024-03-01.md"
+                "file": "journal/2024-03-02.md"
               }
             }
           }
@@ -176,11 +162,11 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "6053c0785d9174d3",
+  "active": "5799d089e9a1e6ed",
   "lastOpenFiles": [
+    "journal/2024-03-01.md",
     "journal/2024-03-02.md",
     "2024-03-02.md",
-    "journal/2024-03-01.md",
     "Tasks Plugin - Review and check your Statuses 2024-03-01 19-05-48.md",
     "Untitled.md",
     "literature-review/liu2024.md",
