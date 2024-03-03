@@ -1,5 +1,8 @@
 ---
-"title:": "Decentralised Robot Swarm Clustering: Adding Resilience to Malicious Masquerade Attacks"
+id: gandhe2022
+aliases: 
+tags: 
+"title:": "Decentralized Robot Swarm Clustering: Adding Resilience to Malicious Masquerade Attacks"
 ---
 ![[gandhe2022.pdf]]
 
@@ -95,9 +98,7 @@ Nodes are outlier if $|N| = 0$
 
 Implemented IDRS by having each node maintain a list of malicious actors that don't change their values over multiple communication.
 
-> [Page 7](Page 7) ... A main goal of our research is to evaluate the extent to which
-> using a distributed IDRS can increase a swarm’s resilience to malicious
-> attacks—assuming that malicious robots can be detected
+> [Page 7](Page 7) ... A main goal of our research is to evaluate the extent to which using a distributed IDRS can increase a swarm’s resilience to malicious attacks—assuming that malicious robots can be detected
 
 # Distributed Swarm k-Means: Algorithm, Attack, IDRS
 Designed for use with robot swarm that uses (only) local communication and local distance information.

@@ -4,33 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "55313be154302c24",
+        "id": "d45c0520edf14bf9",
         "type": "tabs",
         "children": [
           {
-            "id": "5799d089e9a1e6ed",
+            "id": "4f71ce886dc25a8f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "journal/2024-03-02.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f8682f69a5063ffb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tasks Plugin - Review and check your Statuses 2024-03-01 19-05-48.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -99,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "journal/2024-03-02.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "journal/2024-03-02.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "journal/2024-03-02.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -162,22 +140,23 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "5799d089e9a1e6ed",
+  "active": "4f71ce886dc25a8f",
   "lastOpenFiles": [
-    "journal/2024-03-01.md",
     "journal/2024-03-02.md",
-    "2024-03-02.md",
-    "Tasks Plugin - Review and check your Statuses 2024-03-01 19-05-48.md",
-    "Untitled.md",
-    "literature-review/liu2024.md",
     "terminologies/Federated Learning.md",
-    "literature-review/gandhe2022.md",
     "terminologies/Nash Equilibrium.md",
+    "Tasks Plugin - Review and check your Statuses 2024-03-01 19-05-48.md",
+    "literature-review/liu2024.md",
+    "literature-review/gandhe2022.md",
+    "literature-review/assets/gandhe2022.pdf",
+    "Invalid date.md",
+    "journal/2024-03-01.md",
+    "2024-03-02.md",
+    "Untitled.md",
     "Tasks Plugin - Review and check your Statuses 2024-03-01 19-04-05.md",
     "Tasks Plugin - Review and check your Statuses 2024-03-01 19-03-20.md",
     "terminologies",
     "2024-03-01.md",
-    "literature-review/assets/gandhe2022.pdf",
     "Page.md",
     "literature-review/assets",
     "literature-review/assets/liu2024.pdf",
